@@ -5,6 +5,7 @@
 body {
     width: 100%;
     margin: 0;
+    background-color: #f4f4f4;
     font-family: Roboto, sans-serif;
     font-size: 100%;
     font-weight: 400;
@@ -12,7 +13,6 @@ body {
 
 .container {
     max-width: 400px;
-    height: 100vh;
     margin: 0 auto;
     padding: 1rem;
     background-color: #f4f4f4;
