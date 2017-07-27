@@ -5,10 +5,12 @@
 body {
     width: 100%;
     margin: 0;
+    color: #333;
     background-color: #f4f4f4;
     font-family: Roboto, sans-serif;
     font-size: 100%;
     font-weight: 400;
+    text-align: center;
 }
 
 .container {
@@ -25,7 +27,8 @@ h3, h4 {
 }
 
 button {
-    margin: 2rem 0;
+    display: block;
+    margin: 2rem auto;
     padding: 7px 10px;
     border: none;
     font-size: 0.9rem;
@@ -43,6 +46,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 3rem;
 }
 
 .temp, .humi {
