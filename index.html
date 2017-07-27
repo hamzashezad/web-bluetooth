@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Bluetooth</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Web Bluetooth API</h1>
+
+        <button>Get bluetooth devices</button>
+
+        <div class="values">
+            <div class="temp">
+                <i class="fa fa-thermometer-three-quarters" aria-hidden="true"></i>
+                <span>23˚C</span>
+            </div>
+            <div class="humi">
+                <i class="fa fa-tint" aria-hidden="true"></i>
+                <span>34%</span>
+            </div>
+        </div>
+
+        <div class="chart"></div>
+    </div>
+    
+    <script src="app.js"></script>
+    <script>
+        TESTER = document.querySelector('.chart');
+        Plotly.plot(TESTER, [ data.temperature ], {
+                margin: { t: 0 } 
+            }
+        );
+    </script>
+</body>
+</html>
