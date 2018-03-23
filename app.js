@@ -19,16 +19,12 @@ function connectBluetooth() {
         .catch((err) => console.error(err))
 }
 
-
 function handleValueChanged(event) {
     const decoder = new TextDecoder()
     const value = decoder.decode(event.target.value).split(';')
     const temp = parseInt(value[0], 10)
     const humi = parseInt(value[1], 10)
 
-    const tempEl = document.querySelector('.temp')
-    const humiEl = document.querySelector('.humi')
-
-    tempEl.querySelector('span').innerHTML = `${temp}˚C`
-    humiEl.querySelector('span').innerHTML = `${humi}%`
+    document.querySelector('.temp').querySelector('span').innerHTML = `${temp}˚C`
+    document.querySelector('.humi').querySelector('span').innerHTML = `${humi}%`
 }
