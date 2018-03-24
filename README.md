@@ -1,6 +1,6 @@
 # web-bluetooth
 
-###Hardware used
+### Hardware used
 
 - arduino uno
 - dht11 sensor
