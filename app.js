@@ -2,21 +2,18 @@ document.querySelector('button')
     .addEventListener('click', connectBluetooth)
 
 
-function connectBluetooth() {
-    navigator.bluetooth
-        .requestDevice({
-            optionalServices: [ 0xffe0 ],
-            acceptAllDevices: true
-        })
-        .then((device) => device.gatt.connect())
-        .then((server) => server.getPrimaryService(0xffe0))
-        .then((service) => service.getCharacteristic(0xffe1))
-        .then((characteristic) => {
-            characteristic.addEventListener('characteristicvaluechanged', handleValueChanged)
+async function connectBluetooth() {
+    const device = await navigator.bluetooth.requestDevice({
+        optionalServices: [ 0xffe0 ],
+        acceptAllDevices: true
+    })
+    const server = await device.gatt.connect()
+    const service = await server.getPrimaryService(0xffe0)
+    const characteristic = await service.getCharacteristic(0xffe1)
 
-            return characteristic.startNotifications()
-        })
-        .catch((err) => console.error(err))
+    characteristic.addEventListener('characteristicvaluechanged', handleValueChanged)
+
+    return await characteristic.startNotifications();
 }
 
 function handleValueChanged(event) {
